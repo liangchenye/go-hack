@@ -1,0 +1,2 @@
+ curl -i -H 'Content-Type: application/json'     -d '{"Distribution":"Ubuntu14.04","Arch":"arm64", "id": "1235"}' http://127.0.0.1:8080/os
+

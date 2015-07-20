@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"encoding/json"
+	"net/http"
+	"io/ioutil"
 )
 
 type Require struct {
@@ -56,21 +58,62 @@ func debug_ts(ts_demo TestCase) {
 	fmt.Println(ts_demo.Requires)
 }
 
-func apply_resource(ts_demo TestCase) (resources []Resource){
+func apply_os(req Require) (resource Resource){
+	var default_url string
+//run this first to test
+// curl -i -H 'Content-Type: application/json'     -d '{"Distribution":"Ubuntu14.04","Arch":"arm64", "id": "1235"}' http://127.0.0.1:8080/os
+
+	default_url = "http://localhost:8080/os/Ubuntu14.04"
+	resp, err := http.Get(default_url)
+	defer resp.Body.Close()
+	if err != nil {
+		// handle error
+		fmt.Println("err in get")
+		resource.ID = ""
+		resource.Msg = "err in get os"
+		resource.Status = false
+	} else {
+		body, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			resource.ID = ""
+			resource.Msg = "err in read os"
+			resource.Status = false
+		} else {
+//	fmt.Println(string(body))
+			json.Unmarshal([]byte(body), &resource)
+			resource.Msg = "ok"
+			resource.Status = tru
+			fmt.Println(resource)
+		}	
+	}
+
+	return resource
+}
+
+func apply_container(req Require) (resource Resource){
+	return resource
+}
+
+func apply_resource(req Require) (resource Resource){
+	if req.Rtype == "os" {
+		resource = apply_os(req)
+	} else if req.Rtype == "container" {
+		resource = apply_container(req)
+	} else {
+		fmt.Println("What is the new type? How can it pass the validation test")
+	}
+	return resource
+}
+
+func apply_resources(ts_demo TestCase) (resources []Resource){
 	for index :=0; index < len(ts_demo.Requires); index++ {
 		var resource Resource
-		resource.Req = ts_demo.Requires[index]
-		if resource.Req.Rtype == "os"{
-			fmt.Println("os")
-//TODO, here we should add the restful api to get the result from test sever!
-		} else if resource.Req.Rtype == "container" {
-			
-//TODO, here we should add the restful api to get the result from container pool!
-		} else {
-			fmt.Println("What is the new type? How can it pass the validation test")
-			continue
+		var req Require
+		req = ts_demo.Requires[index]
+		resource = apply_resource(req)
+		if len(resource.ID) > 1 {
+			resources = append(resources, resource)	
 		}
-		resources = append(resources, resource)
 	}
 	return resources
 }
@@ -98,7 +141,7 @@ func main() {
 
 	var resources []Resource
 //TODO: async in the future
-	resources = apply_resource(ts_demo)
+	resources = apply_resources(ts_demo)
 	validate, msg = ar_validation(resources)
 	if !validate {
 		fmt.Println(msg)

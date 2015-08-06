@@ -1,0 +1,5 @@
+
+export GOROOT=/usr/local/go
+export PATH=$GOROOT/bin:$PATH
+export GOPATH=/Go
+export LANG=en_US.UTF-8

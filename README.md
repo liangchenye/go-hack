@@ -1,15 +1,15 @@
-多谢 Jessie,
+History of the Open Container Initiative
 
-优惠的购票信息已经给同事和社区的朋友发了 ：）
+Meaning of the Open Container Specification 
 
-另外，这边有两位社区里的容器专家也希望参与这个活动，麻烦安排一下
+Introduction of the Open Container Testing framework
 
-刘奇   15652349467   liuqi@pingcap.com 
-黄东旭  18510146060  huang@pingcap.com 
+Plan of the Open Container Testing community
 
-梁辰晔
-13426107977
-华为开源
+
+
+
+
 TODO-List (by seqence)
 
 1. testcase server

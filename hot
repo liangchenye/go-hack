@@ -1,0 +1,15 @@
+Why are you doing this now?
+
+At CoreOS we have large, serious users running in enterprise environments. 
+We cannot in good faith continue to support Docker’s broken security model without addressing these issues.
+Additionally, in the past few weeks Docker has demonstrated that it is on a path to include many facilities
+beyond basic container management, turning it into a complex platform. Our primary users have existing platforms
+that they want to integrate containers with.
+We need to fill the gap for companies that just want a way to securely and portably run a container.
+
+
+Application containers are useful because they put developers in full control of the exact versions of software
+dependencies for their applications. This reduces surprises that can arise because of discrepancies between different
+environments (like development, test, and production), while freeing the underlying OS from worrying about shipping 
+software specific to the applications it will run.
+This decoupling of concerns increases the ability for the OS and application to be serviced for updates and security patches.

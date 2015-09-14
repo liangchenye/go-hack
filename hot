@@ -13,3 +13,28 @@ dependencies for their applications. This reduces surprises that can arise becau
 environments (like development, test, and production), while freeing the underlying OS from worrying about shipping 
 software specific to the applications it will run.
 This decoupling of concerns increases the ability for the OS and application to be serviced for updates and security patches.
+
+
+
+Docker：
+IBM 在docker 上有两个团队，美国和印度。目前docker on power已经得到了SUSE/Ubuntu/Redhat的支持http://server.51cto.com/Prod-477908.htm 。 他们的研发经理也是这么说的。北京这边可以测试，测试有两种，一种是去IBM测试机房；另一种由代理云， 介绍人说可以联系CSDN。 
+
+IBM开源：
+IBM开源团队非常庞大，比如仅仅Spark目前就有上千人，按照他们的计划还会持续招人。他们自己的说法是，从2000年开始，IBM服务器的收入就不断下降，下降主要原因是来自Linux等开源领域的挑战，尤其是他们在Unix上的收入。比较讽刺的是，Linux这些年的最大推动者就是IBM，所以一个问题是：为什么要养虎为患。他们的回答是：
+开源的趋势不可逆转，与其被其他人颠覆，不如自己颠覆自己。
+
+在谈到kvm虚拟化等IBM贡献很高的项目时，他们的回答是主要动机就是能够让自己的机器上，比如power系列上，能够完美运行KVM，那么另外一个问题是：非power相关的模块是否会参与。他们的回答是：
+优先级会排在power模块之后，但是也会参与，扩大影响力。
+这个和HP的策略完全不一样，我之前和HP中国的开源团队总监聊过，他们只参与HP相关的模块，比如说HP推出新的服务器，那么会参与社区这方面的优化和驱动的实现。
+
+而其他的一些开源项目，IBM也是很积极参与，按照他们经理的说法是：
+担心成为非主流。
+开源趋势下一个项目能够被客户认可需要和主流项目兼容，客户越来越不倾向一个被某一客户完全锁定的解决方案。当然，另外一个解读是他（经理）也不完全知道高层参与开源的全动机。
+
+以上是IBM参与社区项目的一些情况，我也问了IBM自己项目的开源情况，他们的回答是：
+会把一部分模块开源出去，作为社区项目某个模块的替代，并没有完全开放一个项目的所有模块。
+
+IBM power
+按照他们的说法，power在中国的最大目的就是把芯片实现完全摆在政府面前，避免政府担心里面内置某些监听的功能。
+Power定位还是比较高端，但是开放（授权）之后国内厂家已经有和x86价格差不多的实现。
+IBM推power有一段时间了，方法包括： 成立联盟，厂商合作，路演推广等。

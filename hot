@@ -1,5 +1,29 @@
 https://conferences.oreilly.com/oscon
 
+
+TITLE
+    OCT: A new testing framework in the container era
+
+Description.                                  
+  
+The Open Container Testing (OCT) is a testing framework based on the container technology.
+It uses container to generate the testing enviornment and using the underliny orchestration system to deploy the test job.
+Following the container life circle defined in OCI,all the tests could be run in a `industry standard` way. The testing report will deliver to the user afterwards.
+
+Abstract
+The Open Container Testing (OCT) is a testing framework based on the container technology.
+It defines a simple testing specification. Following the spec, anyone could write a test case easily, just like write a dockerfile. 
+OCT generates the testing enviornment by the case and use the underling orchestration  to deploy the test. 
+Following the container life circle defined in Open Container Initiative, all the tests will be run in an `industry standard` way.
+The testing report will deliver to the user afterwards.
+
+The case is infrastructure independent and could be store in any type of case repo. 
+The developer/user could be sure that his/her application is totally reliable with OCT's assistance.
+In the container era, sending the test case to the OCT server before releasing a container application will be a new fashion.
+
+
+
+
 Why are you doing this now?
 
 At CoreOS we have large, serious users running in enterprise environments. 

@@ -1,3 +1,123 @@
+Proposal One
+Proposer
+Chenye Liang (liangchenye@163.com)
+Speakers
+Meaglith Ma (maquanyi@huawei.com)
+
+Title: ContainerOps – The Next Generation DevOps Concept
+
+Biography:
+Meaglith Ma is open source expert in Huawei Corporation, senior architect, full stack developer and open source container & Golang evangelist, contributor in some open source projects. He interested in Container, DevOps, Golang, AngularJS and open source economy. Ma also is a organizer and host of Docker meetup in many cities in China, member of some container conference expert committees, speaker in many architect and DevOps conferences.  Ma propose the ContainerOps of new DevOps concept and application version control system concept  beyond the source version control like Git. 
+
+Description
+Since Docker becomes the hottest open source project,  the container technology is the biggest challenge to DevOps domain.  ContainerOps redesigns the a new DevOps architecture base on container following OCI & CNCF specs. It consists of application version control, continuous integration of micro service workflow and continuous deployment with Kubernetes. 
+Abstract
+Since Docker becomes the hottest open source project,  the container technology is the biggest challenge to DevOps domain. ContainerOps abandons all the aspects of old architectures, redesigns the a new DevOps architecture base on container following OCI & CNCF specs. 
+ContainerOps consists of application version control, continuous integration of micro service workflow and continuous deployment with Kubernetes. 
+
+The application version control is a redesign system with base on git and container image. It’s backward compatible with Git, and rewrite the bare repository storage format with distributed key/value database and distributed object storage service. The system could store over 30T Git repositories easily and many large files storage with LFS (git-lfs.github.com). It has different source view with other major VCS like Github or Gitlab. The main view is the container image detail what builded from source successfully and could be used for CI or CD. The image id already linked with git commit id in database. It have branch and tag same as Git and sync from Git repository.
+
+Continuous integration system is a automate and streamline test workflow for complex applications of base container. Unlike the Jenkins, it build from the ground up with pipelines which consists of stage. You can easily configure dependencies, parallel and sequential pipeline with stage which execute different task , configure global or local parameters and deliver them when the pipeline execute from stage to another. The container image already builded in the application version control system, so you could remove the Jenkins from DevOps tools.
+
+Continuous deployment system manage a cluster of Linux containers with Kubernetes as a single system. The system provide DaaS (Database as a service)  with TiDB  which is a distributed sql database.  So it’s well supported micro service applications of any scale.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Proposal Two:
+Proposer
+Chenye Liang (liangchenye@163.com)
+Speakers
+Genping Liu (liugenping@huawei.com)
+
+Title:  Analysis Between OCI and APPC Specification
+
+Biography:
+
+Genping is a senior engineer in Huawei who has  10 years experience in software design and development. He has deep understanding about software license and container technology.
+Description
+OCI and APPC specification define the container runtime from root directory, mount, isolation, security and so on.  This topic describes their common points , differences and their implementations (runc and rkt) .
+Abstract
+OCI and APPC specifications are two main container specifications. runc and rkt respectively implement the OCI and APPC specifications. This topic describes the two specifications, including their common points and differences, as well as runc and rkt runtime implementation details.
+
+In the past two years, there has been rapid growth in both interest in and usage of container-based solutions. Almost all major IT vendors and cloud providers have announced container-based solutions. The container application portability requires the establishment of certain standards around format and runtime, so the oci and appc specification appeared.
+
+OCI and APPC specification define the container runtime from root directory, mount, isolation, security and so on.  runc  uses namespace , cgroup and chroot  technology to implement the OCI runtime.  But rkt is different, it use systemd which package the namespace and cgroup to implement APPC runtime.
+
+
+
+
+
+
+
+Proposal Three: 
+
+Proposer
+Chenye Liang (liangchenye@163.com)
+Speakers
+Chenye Liang (liangchenye@huawei.com)
+Title: OCT - a container based testing framework
+
+Biography
+Chengye Liang is now working in Huawei open source team, focus on container technology. Before join Huawei, Chenye worked in SUSE Linux as a Desktop team leader and has good experience in openSUSE and GNOME community.
+Description
+The Open Container Testing (OCT) is a testing framework based on the container technology. It uses container to generate the testing environment and using the underlying orchestration system to deploy the test job. Following the container life cycle defined in OCI,all the tests could be run in a `industry standard`. The testing report will deliver to the user afterwards.
+
+Abstract
+The Open Container Testing (OCT) is a testing framework based on the container technology.It defines a simple testing specification.  Anyone could write a test case easily, just like write a dockerfile. 
+
+OCT generates the testing environment by the case and deploy the case to the suitable servers/containers by the underlying orchestration. 
+Following the container life cycle defined in Open Container Initiative, all the tests will be run in an `industry standard` way, the testing report will deliver to the user afterwards.
+The case is infrastructure independent and could be store in any type of case repo. The developer/user could be sure his/her application is totally reliable with OCT.
+
+
+
+
+
+
+
+
+
+Proposal Four:
+Proposer
+Chenye Liang (liangchenye@163.com)
+Speakers
+Yang Wang (victor.wangyang@huawei.com)
+
+Title: How to initiate a successful open source project: Practice and Lessons
+
+Biography
+Yang Wang currently works as an open-source evangelist at Huawei, who is focusing on container, devops, cloud-native and microservice. Prior to that, he is a principle software engineer on Linux, Virtualization and networking. Yang has not only more than 10+ years C programming practice, but also vast experience in telecommunication.
+
+Description
+Huawei has been involved in Container Ecosystem deeply these years and initiated a series of open source projects.  Yang Wang is  going to introduce what these projects are about, why did they decide to open source these projects, how do they operate these projects and what kind of lesson do they learn from.
+
+Abstract
+Open Source has been accepted by almost all major IT/CT vendors as an efficiency collaboration and innovation way. Since 2014, Huawei has been deeply involved in Container Ecosystem and initiated a series of open source projects including OCT, Dockyard,  Harbour, ContainerOps. Anyone and any company which just begins adopting open source will face the common challenges with Huawei.
+
+In this presentation, Yang Wang is  going to introduce a little bit about these projects firstly. And then will share why they decide to open source these projects while there are so many projects existing, how do they initiate and operate these projects successfully and what kind of  lessons do they learn from. 
+
+Audiences could benefit from this presentation and improve open source innovation within their organization. 
+
+
+
+
+
 #!/bin/bash
 #use ubuntu image to create a docker container,and print "hello, world" in the container.
 

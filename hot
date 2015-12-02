@@ -1,3 +1,43 @@
+#!/bin/bash
+#use ubuntu image to create a docker container,and print "hello, world" in the container.
+
+ret=0
+var=`docker run --rm ubuntu bash -c "echo hello, world"`
+if [ "$var"x != "hello, world"x ];then
+        echo "FAILD"
+        ret=1
+else
+        echo "PASS"
+fi
+
+exit $ret
+
+#!/bin/bash
+#get images from docker hub.
+
+ret=0
+docker pull busybox
+if [ $? -ne 0 ];then
+        echo "FAILED"
+        ret=1
+else
+        echo "PASS"
+fi
+
+docker images | grep busybox
+if [ $? -ne 0 ];then
+        echo "FAILED"
+        ret=2
+else
+        echo "PASS"
+fi
+
+exit $ret
+
+
+
+
+
 https://conferences.oreilly.com/oscon
 
 

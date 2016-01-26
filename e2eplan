@@ -1,0 +1,32 @@
+#Container conform test 
+
+## black box test
+|Conform item|API/interface|(Progress)[#progress]|
+|------|--------|-----------|
+| list containers | list | New |
+| get container status| get | New |
+| create container | create | New |
+| delete container | delete | New |
+
+### test cases
+There will be two group of test cases:
+1. based on apiserver
+2. based on pod-interface
+There won't be test case based on kubectl command.
+
+## runtime api test (kubelet/container)
+|Conform item|API/interface|(Progress)[#progress]|
+|------|--------|-----------|
+| list images | GetImageList | New |
+| pull image| PullImage | New |
+| garbage collection | RemoveImage | New|
+
+### test cases
+The test cases will be based on runtime.go, will not use dockertools (ideally).
+
+
+###Progress
+Fill in with the following status to keep track of the whole progress:
+```
+["new", "in progress", "under review", "finish"]
+```

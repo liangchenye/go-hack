@@ -1,8 +1,8 @@
 Assume the upstream changes.
 
-History of the Open Container Initiative
+History of the Open assume upstream changes Container Initiative
 
-Meaning of the Open Container Specification 
+Meaning of the Open Containeraaa Specification 
 
 Introduction of the Open Container Testing framework
 

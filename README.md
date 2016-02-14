@@ -1,3 +1,5 @@
+Assume the upstream changes.
+
 History of the Open Container Initiative
 
 Meaning of the Open Container Specification 

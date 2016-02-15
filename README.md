@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 History of the Open Container Initiative
 aa
 dd
 Meaning of the Open Container Specification 
+=======
+Assume the upstream changes.
+
+History of the Open assume upstream changes Container Initiative
+
+Meaning of the Open Containeraaa Specification 
+>>>>>>> ce5f2c9a1210757a94661ae02c8d98634670d31b
 
 Introduction of the Open Container Testing framework
 

@@ -25,6 +25,10 @@ import (
 	client "k8s.io/kubernetes/pkg/client/unversioned"
 )
 
+const (
+	serviceCreateTimeout = 2 * time.Minute
+)
+
 var _ = Describe("Container Conformance Test", func() {
 	var cl *client.Client
 
@@ -39,7 +43,7 @@ var _ = Describe("Container Conformance Test", func() {
 			BeforeEach(func() {
 				terminateCase = ConformanceContainer{
 					Container: api.Container{
-						Image:           "gcc.io/google_testcontainers/busybox",
+						Image:           "gcr.io/google_containers/busybox",
 						Name:            "busybox",
 						Command:         []string{"echo", "'Hello World'"},
 						ImagePullPolicy: api.PullIfNotPresent,
@@ -53,7 +57,7 @@ var _ = Describe("Container Conformance Test", func() {
 				Expect(err).NotTo(HaveOccurred())
 
 				phase := api.PodPending
-				for start := time.Now(); time.Since(start) < time.Minute*5; time.Sleep(time.Second * 30) {
+				for start := time.Now(); time.Since(start) < time.Minute*serviceCreateTimeout; time.Sleep(time.Second * 30) {
 					ccontainer, err := terminateCase.Get()
 					if err != nil || ccontainer.Phase != api.PodPending {
 						phase = ccontainer.Phase
@@ -91,7 +95,7 @@ var _ = Describe("Container Conformance Test", func() {
 				Expect(err).NotTo(HaveOccurred())
 
 				phase := api.PodPending
-				for start := time.Now(); time.Since(start) < time.Minute*5; time.Sleep(time.Second * 30) {
+				for start := time.Now(); time.Since(start) < time.Minute*serviceCreateTimeout; time.Sleep(time.Second * 30) {
 					ccontainer, err := invalidImageCase.Get()
 					if err != nil || ccontainer.Phase != api.PodPending {
 						phase = ccontainer.Phase

@@ -80,16 +80,6 @@ func (cc *ConformanceContainer) Create() error {
 	return err
 }
 
-func (cc *ConformanceContainer) IsStarted() bool {
-	if ccontainer, err := cc.Get(); err != nil {
-		return false
-	} else if ccontainer.Status == "running" || ccontainer.Status == "terminated" {
-		return true
-	} else {
-		return false
-	}
-}
-
 //Same with 'delete'
 func (cc *ConformanceContainer) Stop() error {
 	return cc.Client.Pods(api.NamespaceDefault).Delete(cc.Container.Name, &api.DeleteOptions{})
@@ -109,5 +99,5 @@ func (cc *ConformanceContainer) Get() (ConformanceContainer, error) {
 	if containers == nil || len(containers) != 1 {
 		return ConformanceContainer{}, errors.New("Failed to get container")
 	}
-	return ConformanceContainer{containers[0], cc.Client, pod.Status.PodPhase}, nil
+	return ConformanceContainer{containers[0], cc.Client, pod.Status.Phase}, nil
 }

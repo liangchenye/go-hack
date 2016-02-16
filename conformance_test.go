@@ -53,7 +53,7 @@ var _ = Describe("Container Conformance Test", func() {
 				Expect(err).NotTo(HaveOccurred())
 
 				phase := api.PodPending
-				for start := time.Now(); time.Since(start) < time.Minute*1; time.Sleep(time.Second * 15) {
+				for start := time.Now(); time.Since(start) < time.Minute*5; time.Sleep(time.Second * 30) {
 					ccontainer, err := terminateCase.Get()
 					if err != nil || ccontainer.Phase != api.PodPending {
 						phase = ccontainer.Phase
@@ -62,7 +62,7 @@ var _ = Describe("Container Conformance Test", func() {
 				}
 				Expect(phase).Should(Equal(terminateCase.Phase))
 			})
-			It("it should report its status as 'terminated' [Conformance]", func() {
+			It("it should report its phase as 'succeeded' [Conformance]", func() {
 				ccontainer, err := terminateCase.Get()
 				Expect(err).NotTo(HaveOccurred())
 				Expect(ccontainer).Should(CContainerEqual(terminateCase))
@@ -91,7 +91,7 @@ var _ = Describe("Container Conformance Test", func() {
 				Expect(err).NotTo(HaveOccurred())
 
 				phase := api.PodPending
-				for start := time.Now(); time.Since(start) < time.Minute*1; time.Sleep(time.Second * 15) {
+				for start := time.Now(); time.Since(start) < time.Minute*5; time.Sleep(time.Second * 30) {
 					ccontainer, err := invalidImageCase.Get()
 					if err != nil || ccontainer.Phase != api.PodPending {
 						phase = ccontainer.Phase
@@ -100,7 +100,7 @@ var _ = Describe("Container Conformance Test", func() {
 				}
 				Expect(phase).Should(Equal(invalidImageCase.Phase))
 			})
-			It("it should report its status as 'waiting' [Conformance]", func() {
+			It("it should report its phase as 'pending' [Conformance]", func() {
 				ccontainer, err := invalidImageCase.Get()
 				Expect(err).NotTo(HaveOccurred())
 				Expect(ccontainer).Should(CContainerEqual(invalidImageCase))

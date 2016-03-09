@@ -42,3 +42,6 @@ TODO-List (by seqence)
 
 # go-hack
 start to use golang
+
+
+ssh-keygen -t rsa -f my-ssh-keys -C "google-ssh {"userName":"my-username@localhost","expireOn":"2018-12-04T20:12:00+0000"}"

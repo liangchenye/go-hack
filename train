@@ -1,3 +1,5 @@
+ssh-keygen -t rsa -f my-ssh-keys -C "google-ssh {"userName":"lcy@localhost","expireOn":"2018-12-04T20:12:00+0000"}"
+
 时间：9月22日—9月24日（周二至周四）                                                  地点：环保园Q13-3-B15R
 对象：2015年入职研发新员工（按入职先后安排参培）                                   班主任：褚慧静/205498
 

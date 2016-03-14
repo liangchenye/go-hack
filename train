@@ -1,3 +1,6 @@
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDlkYu4+/VK9QvLavv6ObEMy0K8KRpt3zZTqsuoxvA8xOyjrSuh8FqIwBsiEnrq5OcHhAIM37WL1isRmg55rWaEDxfCRArxosVyra7UGp9R+xKR8vLLMtDFoVDgkYxy9Z4ipZPm6rkQJ6GoTrPONf2Ql1GMnzbQkxlF59WNCIe6jNsSNwWNdMOb3rBzHMet6NvyYUI2Gq3F664w9GyDrgG/D4bRWjLEyPjhLbR5ctF/Os/uJZcsvx+JSPaQDf9AdP2UT4xy0Sx/bDQHxbBybzJeFvkgj7Y32AVRM1P/mwHJmx8QdlVKaQscs7zdIMbEEsvuZjm5Z2P7Tc3/i1kiapRt google-ssh {userName:lcy@localhost,expireOn:2018-12-04T20:12:00+0000}
+
+
 ssh-keygen -t rsa -f my-ssh-keys -C "google-ssh {"userName":"lcy@localhost","expireOn":"2018-12-04T20:12:00+0000"}"
 
 时间：9月22日—9月24日（周二至周四）                                                  地点：环保园Q13-3-B15R

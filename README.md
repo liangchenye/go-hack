@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-History of the Open Container Initiative
-aa
-dd
-Meaning of the Open Container Specification 
+Open Container Specification 
 =======
 Assume the upstream changes.
 
